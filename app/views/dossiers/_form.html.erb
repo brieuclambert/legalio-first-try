@@ -1,0 +1,32 @@
+<%= form_for(dossier) do |f| %>
+  <% if dossier.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dossier.errors.count, "error") %> prohibited this dossier from being saved:</h2>
+
+      <ul>
+      <% dossier.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :client %>
+    <%= f.text_field :client %>
+  </div>
+
+  <div class="field">
+    <%= f.label :result %>
+    <%= f.number_field :result %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,5 @@
+<% @biens.each do |bien| %>
+<h1><%= bien.name %></h1>
+<% profit = (bien.valeur_emprunt.fdiv(cout_acquisition))*valeur_actuelle  %>
+<%= profit.round(0) %>
+<% end %>
